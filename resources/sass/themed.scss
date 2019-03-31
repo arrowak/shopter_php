@@ -1,0 +1,5 @@
+@import "themify";
+
+@function themed($key) {
+  @return map-get($theme-map, $key);
+}

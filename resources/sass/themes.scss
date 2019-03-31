@@ -1,0 +1,23 @@
+$themes: (
+        light: (
+                "blue": #000,
+                "indigo": #6574cd,
+                "purple": #9561e2,
+                "pink": #f66D9b,
+                "red": #e3342f,
+                "orange": #f6993f,
+                "yellow": #ffed4a,
+                "green": #38c172,
+                "teel": #4dc0b5,
+                "cyan": #6cb2eb,
+        ),
+        dark: (
+                backgroundColor: #222,
+                textColor: #ddd,
+                buttonTextColor: #aaa,
+                buttonTextTransform: uppercase,
+                buttonTextHoverColor: #ddd,
+                buttonColor: #333,
+                buttonBorder: 1px solid #aaa,
+        ),
+);
