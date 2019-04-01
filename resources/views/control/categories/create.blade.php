@@ -1,4 +1,4 @@
-@extends("layouts.default")
+@extends("layouts.control")
 
 @section('breadcrumbs')
     <div class="row breadcrumbs-wrapper">
@@ -11,11 +11,11 @@
 @section('content')
     <div class="card col-12">
         <div class="card-header row">
-            <legend class="card-title">Edit {{ $category->name }}</legend>
+            <legend class="card-title">Create New Category</legend>
         </div>
 
         <div class="card-body">
-            @include('categories._form')
+            @include('control.categories._form')
         </div>
     </div>
 @endsection

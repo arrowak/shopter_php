@@ -12,8 +12,12 @@ Breadcrumbs::for('home', function ($trail) {
     $trail->push('Home', '/');
 });
 
+Breadcrumbs::for('controlHome', function ($trail) {
+    $trail->push('Home', '/control/');
+});
+
 Breadcrumbs::for('categoriesIndex', function ($trail) {
-    $trail->parent('home');
+    $trail->parent('controlHome');
     $trail->push('Categories', route('categories.index'));
 });
 

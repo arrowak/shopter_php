@@ -1,12 +1,8 @@
-@extends('layouts.default')
-
-@section('title')
-    Shopter - Categories
-@endsection
+@extends('layouts.control')
 
 @section('breadcrumbs')
     <div class="row breadcrumbs-wrapper">
-        <div class="col-12">
+        <div class="col-12 p-0">
             {{ Breadcrumbs::render("categoriesIndex") }}
         </div>
     </div>
@@ -41,7 +37,7 @@
                         <td>{{ $category->name }}</td>
                         <td>{{ $category->active ? "Active" : "Inactive" }}</td>
                         <td><a href="{{ route('categories.show', ['category' => $category]) }}"
-                               class="text-light text-link">Show</a></td>
+                               class="text-light text-link">View</a></td>
                         <td><a href="{{ route('categories.edit', ['category' => $category]) }}"
                                class="text-light text-link">Edit</a></td>
                         <td><a href="{{ route('categories.delete', ['category' => $category]) }}"

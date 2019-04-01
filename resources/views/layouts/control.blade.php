@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    @include('partials.head')
+    @include('partials.control.head')
 </head>
-<body id="app-root" class="theme-light bg-dark">
+<body id="app" class="theme-light bg-dark">
 <div class="container-fluid top-nav sticky-top">
-    @include('partials.nav')
+    @include('partials.control.nav')
 </div>
-<div class="container-fluid content-container bg-dark pt-4">
+<div class="container-fluid content-container">
     <div class="row">
-        <div class="col-1">
-            @include('partials.left-nav')
+        <div class="col-2">
+            @include('partials.control.left-nav')
         </div>
         <div class="col-8">
             @yield('breadcrumbs')

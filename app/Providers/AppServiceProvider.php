@@ -25,7 +25,7 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
-        app('view')->composer('layouts.default', function ($view) {
+        app('view')->composer('layouts.control', function ($view) {
             $action = app('request')->route()->getAction();
 
             $controller = class_basename($action['controller']);
