@@ -41,7 +41,7 @@ class CategoryController extends Controller
             'active' => $request->get('active') == 'on' ? true : false,
         ]);
         $category->save();
-        return redirect(route('categoriesIndex'))->with('success', 'Category has been saved');
+        return redirect(route('categories.index'))->with('success', 'Category has been saved');
     }
 
     /**
@@ -52,7 +52,7 @@ class CategoryController extends Controller
      */
     public function show(Category $category)
     {
-        //
+        return view('categories.show', ['category' => $category]);
     }
 
     /**
@@ -63,7 +63,7 @@ class CategoryController extends Controller
      */
     public function edit(Category $category)
     {
-        //
+        return view('categories.edit', ['category' => $category]);
     }
 
     /**
@@ -75,7 +75,12 @@ class CategoryController extends Controller
      */
     public function update(Request $request, Category $category)
     {
-        //
+        $category->update([
+            'name' => $request->get('name'),
+            'active' => $request->get('active') == 'on' ? true : false,
+        ]);
+
+        return redirect(route('categories.index'));
     }
 
     /**
@@ -83,9 +88,11 @@ class CategoryController extends Controller
      *
      * @param  \App\Category $category
      * @return \Illuminate\Http\Response
+     * @throws \Exception
      */
     public function destroy(Category $category)
     {
-        //
+        $category->delete();
+        return redirect(route('categories.index'))->with("success", "Deleted the category successfully");
     }
 }

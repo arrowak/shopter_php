@@ -18,3 +18,14 @@ $yellow: #ffed4a;
 $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
+$blueishdark: #454D55;
+
+
+$theme-colors: () !default;
+// stylelint-disable-next-line scss/dollar-variable-default
+$theme-colors: map-merge(
+        (
+            "blueish-dark": $blueishdark,
+        ),
+        $theme-colors
+);

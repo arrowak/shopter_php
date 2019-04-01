@@ -12,12 +12,17 @@ Breadcrumbs::for('home', function ($trail) {
     $trail->push('Home', '/');
 });
 
-Breadcrumbs::for('CategoryController#index', function ($trail) {
+Breadcrumbs::for('categoriesIndex', function ($trail) {
     $trail->parent('home');
-    $trail->push('Categories', route('categoriesIndex'));
+    $trail->push('Categories', route('categories.index'));
 });
 
-Breadcrumbs::for('CategoryController#create', function ($trail) {
-    $trail->parent('CategoryController#index');
-    $trail->push('Create', route('categoriesCreate'));
+Breadcrumbs::for('categoriesCreate', function ($trail) {
+    $trail->parent('categoriesIndex');
+    $trail->push('Create', route('categories.create'));
+});
+
+Breadcrumbs::for('categoriesShow', function ($trail, \App\Category $category) {
+    $trail->parent('categoriesIndex');
+    $trail->push($category->name, route('categories.show', ['category' => $category]));
 });

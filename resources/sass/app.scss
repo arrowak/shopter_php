@@ -5,26 +5,6 @@
 // Bootstrap
 @import '~bootstrap/scss/bootstrap';
 
-#app-root.theme-light {
-  @include themify($themes) {
-    $theme-colors: () !default;
-    $theme-colors: map-merge(
-                    (
-                            "primary": themed('blue'),
-                            "secondary": themed('gray'),
-                            "success": themed('green'),
-                            "info": themed('cyan'),
-                            "warning": themed('orange'),
-                            "danger": themed('red'),
-                            "light": themed('light'),
-                            "dark": themed('dark')
-                    ),
-                    $theme-colors
-    );
-  }
-}
-
-
 html, body {
   height: 100%;
 }
@@ -44,7 +24,6 @@ html, body {
 
 .content-container {
   background: #ffffff;
-  padding-top: 20px;
   height: auto !important;
   height: 100%;
   min-height: 100%;
@@ -63,7 +42,7 @@ html, body {
   margin-bottom: 20px;
 
   a.action {
-    @extend .btn, .float-right, .btn-sm, .btn-outline-light;
+      @extend .btn, .float-right, .btn-sm, .btn-outline-light, .mr-2;
   }
 }
 
@@ -93,4 +72,8 @@ html, body {
   .card-header {
     @extend .bg-dark;
   }
+}
+
+.text-link {
+    text-decoration: underline;
 }

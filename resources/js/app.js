@@ -31,3 +31,18 @@ Vue.component('example-component', require('./components/ExampleComponent.vue').
 const app = new Vue({
     el: '#app'
 });
+
+
+$(document).ready(function () {
+    $('a[data-prompt="true"]').click(function (e) {
+        var message = $(this).data('prompt-message') || "Are you sure?";
+        var ask = confirm(message);
+
+        if (ask) {
+            return true;
+        } else {
+            e.stopPropagation();
+            return false;
+        }
+    })
+});

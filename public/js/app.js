@@ -49032,6 +49032,19 @@ Vue.component('example-component', __webpack_require__(/*! ./components/ExampleC
 var app = new Vue({
   el: '#app'
 });
+        $(document).ready(function () {
+            $('a[data-prompt="true"]').click(function (e) {
+                var message = $(this).data('prompt-message') || "Are you sure?";
+                var ask = confirm(message);
+
+                if (ask) {
+                    return true;
+                } else {
+                    e.stopPropagation();
+                    return false;
+                }
+            });
+        });
 
 /***/ }),
 
@@ -49180,8 +49193,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Library/WebServer/Documents/lara/shopter/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Library/WebServer/Documents/lara/shopter/resources/sass/app.scss */"./resources/sass/app.scss");
+        __webpack_require__(/*! C:\WinNMP\WWW\shopter\resources\js\app.js */"./resources/js/app.js");
+        module.exports = __webpack_require__(/*! C:\WinNMP\WWW\shopter\resources\sass\app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
